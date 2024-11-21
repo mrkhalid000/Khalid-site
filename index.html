@@ -44,78 +44,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Toggle Theme</title>
+  <title>Khalid website</title>
   <style>
     /* Default light theme */
     :root {
       --background-color: #ffffff;
       --text-color: #000000;
+      --header-background: #f0f0f0;
+      --header-text-color: #000000;
     }
 
     /* Dark theme */
     [data-theme="dark"] {
       --background-color: #121212;
-      --text-color: #ffffff;
-    }
-
-    body {
-      background-color: var(--background-color);
-      color: var(--text-color);
-      font-family: Arial, sans-serif;
-      transition: background-color 0.3s, color 0.3s;
-      margin: 0;
-      padding: 0;
-    }
-
-    .theme-toggle {
-      position: fixed;
-      top: 10px;
-      right: 10px;
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-      border: 1px solid var(--text-color);
-      background: none;
-      color: var(--text-color);
-      border-radius: 5px;
-      z-index: 1000; /* Ensures it stays above other content */
-    }
-
-    header {
-      padding: 20px;
-      text-align: center;
-      background-color: var(--background-color);
-      border-bottom: 1px solid var(--text-color);
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Welcome to My Website</h1>
-  </header>
-
-  <button class="theme-toggle" id="theme-toggle">Toggle Theme</button>
-
-  <main>
-    <p>This is a sample website with a theme toggle feature. Scroll to see the button fixed at the top.</p>
-    <p>Enjoy switching between light and dark themes!</p>
-  </main>
-
-  <script>
-    // Get the button element
-    const toggleButton = document.getElementById('theme-toggle');
-
-    // Function to toggle theme
-    toggleButton.addEventListener('click', () => {
-      const currentTheme = document.documentElement.getAttribute('data-theme');
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-    });
-
-    // Load theme from localStorage on page load
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    document.documentElement.setAttribute('data-theme', savedTheme);
-  </script>
-</body>
-</html>
+      --
