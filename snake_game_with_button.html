@@ -20,8 +20,8 @@
 
     canvas {
       background: #121212;
-      display: block;
-      margin: 0 auto;
+      display: none;
+      margin: 20px auto;
       border: 2px solid #007bff;
     }
 
@@ -36,16 +36,33 @@
       font-size: 1rem;
       color: #555;
     }
+
+    .play-btn {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .play-btn:hover {
+      background-color: #0056b3;
+    }
   </style>
 </head>
 <body>
-  <h1>Snake Game: King Khalid</h1>
+  <h1>King Khalid Snake Game</h1>
+  <button class="play-btn" id="playButton">Play Khalid Snake Game</button>
   <canvas id="snakeGame" width="400" height="400"></canvas>
   <p class="instructions">Use arrow keys to control the snake. Try to eat the food!</p>
 
   <script>
     const canvas = document.getElementById("snakeGame");
     const ctx = canvas.getContext("2d");
+    const playButton = document.getElementById("playButton");
 
     // Game variables
     const box = 20;
@@ -147,7 +164,12 @@
       updateGame();
     }
 
-    const game = setInterval(gameLoop, 150);
+    // Start the game when the button is clicked
+    playButton.addEventListener("click", () => {
+      playButton.style.display = "none"; // Hide the button
+      canvas.style.display = "block"; // Show the canvas
+      setInterval(gameLoop, 150);
+    });
   </script>
 </body>
 </html>
